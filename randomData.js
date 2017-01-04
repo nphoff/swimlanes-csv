@@ -121,7 +121,21 @@
 			return data;
 		};
 
-		return parseData(generateRandomWorkItems());
+        var getCSVData = function () {
+            var data = [];
+            d3.csv('data.csv', function(d) {
+                for (var i = 0; i < d.length; i++) {
+                    d[i].start = new Date(d[i].start_ts * 1000);
+                    d[i].end = new Date(d[i].end_ts * 1000);
+                }
+                data = d;
+            });
+            return data;
+        };
+
+        console.log(getCSVData());
+
+	    return parseData(getCSVData());
 	};
 
     /**
