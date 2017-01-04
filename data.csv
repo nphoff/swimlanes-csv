@@ -1,5 +1,6 @@
 id,name,lane,start_ts,end_ts,desc
-0,werk,nathan,1483228800,1485907200,onetotwo
-1,werk_werk,allspaw,1483228800,1485907200,onetotwo
-2,werk3,allison,1483228800,1488326400,onetothree
-3,werk4,nathan,1485907200,1488326400,twotothree
+0,"make checkout great again",checkout,1483228800,1485907200,onetotwo
+1,"asking hard questions",abalkin,1483228800,1485907200,onetotwo
+1,"asking harder questions",abalkin,1485909200,1488326400,onetotwo
+2,"investigation",rcook,1483228800,1488326400,onetothree
+3,"continue doing checkout things",checkout,1485909200,1488326400,twotothree
