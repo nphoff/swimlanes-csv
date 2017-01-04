@@ -249,11 +249,12 @@ function display () {
 
 	// update the item labels
 	labels = itemRects.selectAll('text')
-		.data(visItems, function (d) { return d.id; })
+		.data(visItems, function (d) { return d.name; })
 		.attr('x', function(d) { return x1(Math.max(d.start, minExtent)) + 2; });
 
 	labels.enter().append('text')
-		.text(function (d) { return 'Item\n\n\n\n Id: ' + d.id; })
+        // Black magic here...
+		.text(function (d) { return '\n\n\n\n' + d.name; })
 		.attr('x', function(d) { return x1(Math.max(d.start, minExtent)) + 2; })
 		.attr('y', function(d) { return y1(d.lane) + .4 * y1(1) + 0.5; })
 		.attr('text-anchor', 'start')
@@ -358,7 +359,8 @@ function collapseLanes(chart) {
                     start: item.start,
                     end: item.end,
                     class: item.end > now ? 'future' : 'past',
-                    desc: item.desc
+                    desc: item.desc,
+                    name: item.name
                 });
             }
 
